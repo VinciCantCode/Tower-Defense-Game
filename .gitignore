@@ -1,0 +1,60 @@
+# Unity generated folders
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+MemoryCaptures/
+
+# User-specific settings
+UserSettings/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# System files
+.DS_Store
+*.swp
+
+# Unity local cache and project files
+*.pidb
+*.booproj
+*.svd
+
+# Unity Collaborate files
+.collabignore
+
+# IDE and build system files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Crash reports
+sysinfo.txt
+
+# Build outputs
+*.apk
+*.aab
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Unity Cloud Build cache
+/[Cc]ache/
+
+# Ignore TextMesh Pro assets
+Assets/TextMesh Pro/ 

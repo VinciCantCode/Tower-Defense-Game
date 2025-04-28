@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 public class FiringTower : TargetingTower
 {
+    [Tooltip("Can the tower attack flying enemies?")]
+    public bool canAttackFlying = true;
+
     [Tooltip("Quick reference to the root Transform of the tower.")]
     public Transform trans;
+
     [Tooltip("Reference to the Transform that the projectile should be positioned and rotated with initially.")]
     public Transform projectileSpawnPoint;
+
     [Tooltip("Reference to the Transform that should point towards the enemy.")]
     public Transform aimer;
+
     [Tooltip("Seconds between each projectile being fired.")]
     public float fireInterval = .5f;
+
     [Tooltip("Reference to the projectile prefab that should be fired.")]
     public Projectile projectilePrefab;
+
     [Tooltip("Damage dealt by each projectile.")]
     public float damage = 4;
+
     [Tooltip("Units per second travel speed for projectiles.")]
     public float projectileSpeed = 60;
+
     private Enemy targetedEnemy;
     private float lastFireTime = Mathf.NegativeInfinity;
     //Methods:
@@ -66,13 +76,16 @@ public class FiringTower : TargetingTower
             }
             else //If the enemy is alive and in range,
             {
-                //Aim at the enemy:
-                AimAtTarget();
-
-                //Check if it's time to fire again:
-                if (Time.time > lastFireTime + fireInterval)
+                if (canAttackFlying || targetedEnemy is GroundEnemy)
                 {
-                    Fire();
+                    //Aim at the enemy:
+                    AimAtTarget();
+
+                    //Check if it's time to fire again:
+                    if (Time.time > lastFireTime + fireInterval)
+                    {
+                        Fire();
+                    }
                 }
             }
         }

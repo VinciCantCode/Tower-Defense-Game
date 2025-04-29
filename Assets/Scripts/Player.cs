@@ -132,6 +132,10 @@ public class Player : MonoBehaviour
     [Tooltip("Gold given to the player at the end of each level.")]
     public int goldRewardPerLevel = 12;
 
+    // [Header("Level Text")]
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI HPText;
+
     //The current level.
     public static int level = 1;
 
@@ -475,6 +479,8 @@ public class Player : MonoBehaviour
         //Increase level:
         level += 1;
         gold += goldRewardPerLevel;
+
+        UpdateLevelText();
     }
     public void StartLevel()
     {
@@ -512,12 +518,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void UpdateLevelText()
+    {
+        if (levelText != null)
+            levelText.text = "Level: " + level;
+    }
+
+     private void UpdateHPText()
+    {
+        if (HPText != null)
+            HPText.text = "HP: " + remainingLives;  
+    }
+
     //Events:
     void Start()
     {
         targetPosition = trans.position;
         GroundEnemy.path = new NavMeshPath();
         UpdateEnemyPath();
+        UpdateLevelText();
     }
 
     void Update()
@@ -534,6 +553,8 @@ public class Player : MonoBehaviour
             BuildModeLogic();
         else
             PlayModeLogic();
+
+        UpdateHPText();
     }
 
 

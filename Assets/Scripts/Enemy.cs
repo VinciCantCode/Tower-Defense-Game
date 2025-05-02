@@ -41,7 +41,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-
     //Unity events:
     protected virtual void Start()
     {

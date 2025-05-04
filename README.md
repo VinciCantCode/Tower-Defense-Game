@@ -17,7 +17,7 @@ A classic 3D Tower Defense game built with Unity. Defend your base from waves of
   Earn gold by defeating enemies and completing levels.  
   Spend gold to build, upgrade, or sell towers.
 - **User Interface:**  
-  Intuitive UI for building, upgrading, and selling towers.  
+  Intuitive UI for building, upgrading, and selling tower.  
   Visual feedback for gold, lives, and game state.
 
 ## Getting Started
